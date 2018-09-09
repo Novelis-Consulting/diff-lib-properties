@@ -33,15 +33,7 @@ public class Log4jConfiguration {
 
 	private List<Logger> loggers = new ArrayList<Logger>();
 
-	public static void main(String[] args) throws Exception {
-		Properties cleValue=getCleValueOfLog4Xml("D:/bundle_apicil/workspace1-7/ConfCosy/recette/web/log4j.xml");
-		Properties cleValue1=getCleValueOfLog4Xml("D:/bundle_apicil/workspace1-7/ConfCosy/integration/web/log4j.xml");
-		Properties cleValue2=getCleValueOfLog4Xml("D:/bundle_apicil/workspace1-7/ConfCosy/preprod/web/log4j.xml");
-		Properties cleValue3=getCleValueOfLog4Xml("D:/bundle_apicil/workspace1-7/ConfCosy/prod/web/log4j.xml");
-		
-		Set<String> keys=new HashSet<String>();
 
-	}
 
 	public static Properties getCleValueOfLog4Xml(String fileName) throws JAXBException {
 		File fXmlFile = new File(fileName);
