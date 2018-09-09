@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+     stages {
+        
+        stage('build compare conf'){
+            steps{
+                git 'https://github.com/Novelis-Consulting/diff-lib-properties.git'
+                sh "mvn clean install"
+                sh "java -cp target/diff-lib-properties-0.0.1-SNAPSHOT.jar org.novelis.diff.lib.properties.Main"
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '.', reportFiles: 'result.html', reportName: 'Comparaison detail', reportTitles: 'Comparaison detail'])
+           	 }
+   	     }
+   
+      }
+                
+}
+    

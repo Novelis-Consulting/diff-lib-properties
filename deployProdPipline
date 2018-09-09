@@ -1,0 +1,31 @@
+stage('Comparing env confs') {
+    build 'CONF_COMPARE'
+
+   			 script {
+        	              timeout(time: 10, unit: 'MINUTES') {
+
+        	                // Get the input
+        	                 def  userInput = input(id: "Déploiement", message: "Déploiement du projet ${params.project_name} en production?",parameters: [
+											       [$class: 'PasswordParameterDefinition', defaultValue: '', 
+											                description:'Mot de passe de déploiement en production', name:'password']
+											             
+											        ])
+	        	                   if (userInput.toString().equals("PASSWORD")) {
+	        				        // do something
+	        				        echo "this was successful"
+		        				    } else {
+		        				        // do something else
+		        				        currentBuild.result = 'FAILURE'
+		        				        error("Mot de passe saisi est erroné. Veuillez réssayez. Password : "+userInput)
+		        				    } 
+        	              }
+        	    }
+}
+
+stage('PERF') {
+  build 'PERF_TEST'
+}
+
+stage('Deploy') {
+  build 'PROD'
+}
