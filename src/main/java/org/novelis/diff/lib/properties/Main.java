@@ -8,8 +8,8 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 	
 		List<String> properties=new ArrayList<String>();
-		properties.add("/opt/work/bundle_apicil/git/git/confmep/int-apicil_105/web/cosyConfiguration.properties");
-		properties.add("/opt/work/bundle_apicil/git/git/confmep/prod/web/cosyConfiguration.properties");
+		properties.add("/opt/hub/rec/conf/hub-common-configuration.properties");
+		properties.add("/opt/hub/rec/conf/hub-configuration.properties");
 
 		List<String> propertiesHeader=new ArrayList<String>();
 		propertiesHeader.add("int");
