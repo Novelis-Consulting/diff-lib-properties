@@ -15,7 +15,7 @@ public class Main {
 		propertiesHeader.add("int");
 		propertiesHeader.add("prod");
 
-		String fileOut="/opt/result.html";
+		String fileOut="/opt/hub/rec/result.html";
 		ControleConf.comparePropertyFile(properties, propertiesHeader, fileOut);
 
 	}
